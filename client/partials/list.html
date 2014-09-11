@@ -1,0 +1,27 @@
+<div class="container" ng-controller="shopCtrl">
+    <div class="row col-md-12">
+        <div>
+            <input type="text" class="form-control input-lg" placeholder="Enter a Shopping List" ng-keypress="save($event)" ng-model="listInput">
+        </div>
+    </div>
+    <div class="row col-md-12 todos">
+        <div class="alert alert-info text-center" ng-hide="list.length > 0">
+            <h3>No Shopping List Yet!</h3>
+        </div>
+        <div ng-repeat="list in lists" class="todo col-md-12 col-sm-12 col-xs-12" ng-class="list.isCompleted ? 'strike' : ''">
+            <div class="col-md-1 col-sm-1 col-xs-1">
+                <input type="checkbox" ng-checked="list.isCompleted" ng-click="updateStatus($event, list._id, $index)">
+            </div>
+            <div class="col-md-8 col-sm-8 col-xs-8">
+                <span ng-show="!isEditable[$index]">{{list.list}}</span>
+                <input ng-show="isEditable[$index]" type="text" value="{{list.list}}" ng-keypress="edit($event,$index);">
+                <input ng-show="isEditable[$index]" type="button" class="btn btn-warning" value="Cancel" ng-click="isEditable[$index] = false" />
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-3">
+                <input type="button" class="btn btn-info" ng-disabled="list.isCompleted" class="pull-right" value="Edit" ng-click="isEditable[$index] = true" />
+                <input type="button" class="btn btn-danger" class="pull-right" value="Delete" ng-click="delete($index)" />
+            </div>
+
+        </div>
+    </div>
+</div>

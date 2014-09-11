@@ -1,0 +1,27 @@
+{
+  "name": "ShopList",
+  "version": "0.1.0",
+  "description": "A MEAN stack Shop List",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ayoola Odutayo",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.8.1",
+    "cookie-parser": "^1.3.3",
+    "debug": "^2.0.0",
+    "ejs": "^1.0.0",
+    "express": "^4.9.0",
+    "mongojs": "^0.14.1",
+    "morgan": "^1.3.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.8",
+    "gulp-jshint": "^1.8.4",
+    "gulp-livereload": "^2.1.1",
+    "gulp-nodemon": "^1.0.4",
+    "gulp-watch": "^1.0.2"
+  }
+}
